@@ -10,7 +10,7 @@ agent(7).measpar.idx = cat(3,[idx{7};idx{6}],[idx{7};idx{8}]);
 agent(8).measpar.idx = cat(3,[idx{8};idx{7}]);
 
 
-agent(1).xref = @(t) [0 4 0 0]';
+agent(1).xref = @(t) [0 4+0.2*sin(t) 0 0]';
 agent(2).xref = @(t) [0 0;1 -1; 0 0;0 0];
 agent(3).xref = @(t) [0 0;1 -1; 0 0;0 0];
 agent(4).xref = @(t) [0 0;1 -1; 0 0;0 0];

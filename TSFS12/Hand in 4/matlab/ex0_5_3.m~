@@ -11,14 +11,14 @@ addpath functions
 % founnd in the directory 'functions'.
 
 % Specify which dynamic model that is used
-agent(1).f = @f2;
-agent(2).f = @f2;
-agent(3).f = @f2;
-agent(4).f = @f2;
-agent(5).f = @f2;
-agent(6).f = @f2;
-agent(7).f = @f2;
-agent(8).f = @f2;
+agent(1).f = @f1;
+agent(2).f = @f1;
+agent(3).f = @f1;
+agent(4).f = @f1;
+agent(5).f = @f1;
+agent(6).f = @f1;
+agent(7).f = @f1;
+agent(8).f = @f1;
 
 % The dynamic model f1 is as single integrator model. You control the
 % velocity of the agent. The acceleration of (or force on) the agent will
@@ -39,7 +39,7 @@ agent(7).mdlpar = modelparam;
 agent(8).mdlpar = modelparam;
 
 % Specify which controller model that is used
-agent(1).g = @g3a;
+agent(1).g = @g1;
 agent(2).g = @g3b;
 agent(3).g = @g3b;
 agent(4).g = @g3b;
@@ -92,7 +92,7 @@ agent(8).h = @h3b;
 % agent(3).xref = @(t) [3 2 0 0]'; % Fixed position
 % agent(4).xref = @(t) [5 4 0 0]'; % Fixed position
 
-formation_ex5_2
+formation_ex5_3
 
 % SIMULATION
 

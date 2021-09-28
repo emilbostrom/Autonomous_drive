@@ -15,11 +15,11 @@ function y = h3b(x, measpar)
 
 y1 = [x(measpar.idx(2,:,1))-x(measpar.idx(1,:,1))];
 
-if size(measpar.idx,3) > 1 
-    y2 = [x(measpar.idx(2,:,2))-x(measpar.idx(1,:,2))];
-    y = [y1,y2];
-else
+% if size(measpar.idx,3) > 1 
+%     y2 = [x(measpar.idx(2,:,2))-x(measpar.idx(1,:,2))];
+%     y = [y1,y2];
+% else
     y = y1;
-end
+% end
 
 end
