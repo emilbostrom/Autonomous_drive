@@ -1,5 +1,5 @@
 
-function y = h3b(x, measpar)
+function y = h4(x, measpar)
 % Measurement function
 %
 % The measurement function gives the measurements available to the agent.
@@ -13,9 +13,10 @@ function y = h3b(x, measpar)
 % Output:
 %   y - The measurement vector
 
-y1 = [x(measpar.meas_idx(2,:,1))-x(measpar.meas_idx(1,:,1))]';
-y2 = [x(measpar.meas_idx(2,:,2))-x(measpar.meas_idx(1,:,2))]';
-
-y = [y1;y2];
+y = [];
+for i = 1:size(measpar.idx,3)
+    yx = [x(measpar.idx(2,:,i))-x(measpar.idx(1,:,i))];
+    y = [y,yx];
+end
 
 end

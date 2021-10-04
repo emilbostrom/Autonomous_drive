@@ -1,5 +1,5 @@
 
-function u = g1(y, xref, ctrlpar)
+function u = g4(y, xref, ctrlpar)
 % Control function
 %     
 % Compute the control signal, in this case it is a P-controller which gives
@@ -17,5 +17,12 @@ function u = g1(y, xref, ctrlpar)
 %   Control signal 
 
 
-u = ctrlpar.kp*(xref-y);
+var = norm(y(1:2,:));
+gamma_prim = 4*(var.^2-norm(xref(1:2,:)).^2).*var;
+
+u = ctrlpar.kp*gamma_prim.*var.*y(1:2,:)./var;
+
+%u = sum(ctrlpar.kp*(y(1:2,1:2)-xref(1:2,1:2)),2) + sum(ctrlpar.kv*(y(3:4,1:2)-xref(3:4,1:2)),2);
+
 end
+

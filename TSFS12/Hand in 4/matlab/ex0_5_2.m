@@ -125,4 +125,6 @@ hold on
 for i = 1:8
     plot(x(:,i*4))
 end
-
+title('Vertical velocities - 2 rad/s')
+xlabel('Time')
+ylabel('Vertical velocity')
